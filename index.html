@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f6f2">
+    <meta name="description" content="A thoughtful daily briefing from Vireo.">
+    <title>Vireo — A clearer view of the news</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Skip to stories</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Vireo home">
+        <span class="brand-mark" aria-hidden="true">v</span>
+        <span>vireo<span class="brand-period">.</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button class="nav-link is-active" type="button" data-feed="latest">Discover</button>
+        <button class="nav-link" type="button" data-feed="trending">Trending</button>
+        <button class="nav-link" type="button" data-feed="saved">Saved</button>
+      </nav>
+      <label class="search-box">
+        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><circle cx="8.8" cy="8.8" r="5.8" stroke="currentColor" stroke-width="1.6"/><path d="m13.2 13.2 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="visually-hidden">Search stories</span>
+        <input id="search" type="search" placeholder="Search stories" autocomplete="off">
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+    </header>
+    <div class="edition-bar">
+      <span><span class="live-dot" aria-hidden="true"></span> YOUR DAILY BRIEFING</span>
+      <span id="edition-date"></span>
+    </div>
+    <div id="status" class="visually-hidden" role="status" aria-live="polite"></div>
+    <main id="app" tabindex="-1"></main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="./"><span class="brand-mark" aria-hidden="true">v</span><span>vireo<span class="brand-period">.</span></span></a>
+      <span>An independent perspective, for a curious world.</span>
+      <span class="demo-note">A preview edition · Stories are sample content</span>
+    </footer>
+  </body>
+</html>
