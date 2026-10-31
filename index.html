@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a15">
+  <meta name="description" content="A fast, local two-player anime-inspired coin duel.">
+  <title>Starfall Showdown — Coin Duel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Starfall Showdown home"><span class="brand-mark" aria-hidden="true">✦</span><span>STARFALL<span class="brand-light">.ARCADE</span></span></a>
+      <span class="local-badge"><span aria-hidden="true"></span> LOCAL 2 PLAYER</span>
+    </header>
+
+    <section class="intro" aria-labelledby="game-title">
+      <p class="eyebrow"><span></span> THE NEBULA CUP · ROUND 01</p>
+      <h1 id="game-title">Starfall <span>Showdown</span></h1>
+      <p class="subtitle">Two rivals. One cosmic arena. Grab the most stardust before the stars go out.</p>
+    </section>
+
+    <section class="match" aria-label="Game scoreboard">
+      <div class="score-card score-card--nova">
+        <div class="avatar avatar--nova" aria-hidden="true"><span class="avatar-hair"></span><span class="avatar-face"></span><span class="avatar-jacket"></span></div>
+        <div class="score-info"><span class="player-name">NOVA</span><span class="player-caption">THE COMET RUNNER</span></div>
+        <span class="score-value" id="score-one" aria-label="Nova score">0</span>
+      </div>
+      <div class="timer-card" aria-live="polite">
+        <span class="timer-label">TIME LEFT</span><span class="timer-value" id="timer">01:00</span>
+        <span class="timer-track"><span id="timer-progress"></span></span>
+      </div>
+      <div class="score-card score-card--vex">
+        <span class="score-value" id="score-two" aria-label="Vex score">0</span>
+        <div class="score-info score-info--right"><span class="player-name">VEX</span><span class="player-caption">THE VOID DANCER</span></div>
+        <div class="avatar avatar--vex" aria-hidden="true"><span class="avatar-hair"></span><span class="avatar-face"></span><span class="avatar-jacket"></span></div>
+      </div>
+    </section>
+
+    <section class="arena-frame" aria-label="Starfall Showdown game arena">
+      <div class="arena-topline">
+        <span><span class="live-dot"></span> NEBULA ARENA</span>
+        <span id="arena-status">READY TO PLAY</span>
+        <span>BEST OF 60 SECONDS</span>
+      </div>
+      <div class="arena-wrap">
+        <canvas id="arena" width="960" height="540" aria-label="Game arena. Nova is controlled with WASD and Vex with the arrow keys."></canvas>
+        <div class="game-overlay" id="game-overlay">
+          <div class="overlay-panel">
+            <span class="overlay-kicker" id="overlay-kicker">DUEL PROTOCOL · 01</span>
+            <h2 id="overlay-title">Ready, stargazers?</h2>
+            <p id="overlay-copy">Collect the glowing coins. Whoever has the most when the 60-second timer ends wins.</p>
+            <button class="play-button" id="play-button" type="button">START THE DUEL <span aria-hidden="true">↗</span></button>
+            <span class="overlay-footnote">LOCAL MATCH · NO DOWNLOAD NEEDED</span>
+          </div>
+        </div>
+      </div>
+      <div class="arena-footer"><span><span class="coin-mini" aria-hidden="true">✦</span> Collect stardust coins to score</span><span>First to more coins when the timer hits zero wins</span></div>
+    </section>
+
+    <section class="controls" aria-label="Game controls">
+      <div class="control-card control-card--nova">
+        <div class="control-heading"><span class="control-player">01 <b>NOVA</b></span><span class="keyboard-hint">PLAYER ONE</span></div>
+        <div class="control-row">
+          <div class="key-cluster" aria-label="WASD to move"><kbd>W</kbd><span><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span></div>
+          <span class="control-description">MOVE</span><span class="dash-keys"><kbd>E</kbd> DASH</span>
+        </div>
+      </div>
+      <div class="control-card control-card--vex">
+        <div class="control-heading"><span class="control-player">02 <b>VEX</b></span><span class="keyboard-hint">PLAYER TWO</span></div>
+        <div class="control-row">
+          <div class="key-cluster key-cluster--arrows" aria-label="Arrow keys to move"><kbd>↑</kbd><span><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span></div>
+          <span class="control-description">MOVE</span><span class="dash-keys"><kbd>ENTER</kbd> DASH</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="touch-controls" aria-label="Touch controls">
+      <div class="touch-player touch-player--nova">
+        <span>NOVA · MOVE</span>
+        <div class="touch-pad">
+          <button type="button" data-key="KeyW" aria-label="Nova move up">↑</button><button type="button" data-key="KeyA" aria-label="Nova move left">←</button><button type="button" data-key="KeyS" aria-label="Nova move down">↓</button><button type="button" data-key="KeyD" aria-label="Nova move right">→</button>
+        </div>
+        <button type="button" class="touch-dash" data-key="KeyE" aria-label="Nova dash">DASH</button>
+      </div>
+      <div class="touch-player touch-player--vex">
+        <span>VEX · MOVE</span>
+        <div class="touch-pad">
+          <button type="button" data-key="ArrowUp" aria-label="Vex move up">↑</button><button type="button" data-key="ArrowLeft" aria-label="Vex move left">←</button><button type="button" data-key="ArrowDown" aria-label="Vex move down">↓</button><button type="button" data-key="ArrowRight" aria-label="Vex move right">→</button>
+        </div>
+        <button type="button" class="touch-dash" data-key="Enter" aria-label="Vex dash">DASH</button>
+      </div>
+    </section>
+
+    <footer class="page-footer"><span>ORIGINAL CHARACTERS · INFINITE RIVALRY</span><span>BUILT FOR THE LOVE OF THE DUEL <span aria-hidden="true">✦</span></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
